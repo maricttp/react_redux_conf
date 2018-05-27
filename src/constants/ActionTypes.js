@@ -1,0 +1,6 @@
+export default {
+
+    INCREASE_ACTION: 'INCREASE_ACTION',
+    DECREASE_ACTION: 'DECREASE_ACTION'
+
+}
