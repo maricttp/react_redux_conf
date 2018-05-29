@@ -6,7 +6,7 @@ import { createStore } from 'redux';
 
 
 import { reducers } from './reducers/index';
-import App from './components/App/AppContainer';
+import App from './views/App/AppContainer';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './styles/main.scss';
