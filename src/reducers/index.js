@@ -1,6 +1,10 @@
 import { combineReducers } from "redux";
-import Number from './number';
+import { routerReducer as routing } from 'react-router-redux'
+import number from './number';
 
-export const reducers = combineReducers({
-  result: Number
+const reducers = combineReducers({
+  routing,
+  number
 });
+
+export default reducers

@@ -4,7 +4,7 @@ import {numberIncrease , numberDecrease} from '../../actions/numberActions'
 
 const mapStateToProps = (state) => {
   return {
-    result: state.result
+    result: state.number
   }
 }
 

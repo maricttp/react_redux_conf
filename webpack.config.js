@@ -33,7 +33,9 @@ module.exports = {
           })
     ],
     performance: {
-      hints: env === 'production' ? false : "warning"
+      hints: env === 'production' ? false : "warning",
+      maxEntrypointSize: 500000,
+      maxAssetSize: 500000
     },
     devServer: {
          contentBase: path.resolve(__dirname, 'dist'),

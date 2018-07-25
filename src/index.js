@@ -1,23 +1,26 @@
-import "babel-polyfill";
-import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import 'babel-polyfill'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { reducers } from './reducers/index'
+import App from './views/App/AppContainer'
 
+import configureStore from './stores/configureStore'
 
-import { reducers } from './reducers/index';
-import App from './views/App/AppContainer';
+import './styles/main.scss'
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import './styles/main.scss';
+export function bootstrapApplication () {
+  const store = configureStore()
+  startApplication(store)
+}
 
-let store = createStore(reducers);
-
-ReactDOM.render(
- <Provider store={store}>
-    <MuiThemeProvider>
+function startApplication (store) {
+  ReactDOM.render((
+    <Provider store={store}>
       <App />
-    </MuiThemeProvider>
-   </Provider>,
-  document.getElementById('app')
-);
+    </Provider>
+  ), document.getElementById('app'))
+}
+
+
+bootstrapApplication()
